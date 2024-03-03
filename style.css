@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(247, 39, 152);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    perspective: 1000px;
+}
+
+img {
+    width: 50px;
+    height: 100px;
+}
+.card {
+    width: 95%;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    margin: 5px;
+}
+
+.card.flip {
+   transform: rotateY(180deg);
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(235, 244, 0);
+    border-radius: 5px;
+    padding: 40px;
+    backface-visibility: hidden;
+}
+
+
+.front {
+    transform: rotateY(180deg);
+}
+
+
+.stageRound > button {
+    width: 200px;
+    height: 50px;
+}
